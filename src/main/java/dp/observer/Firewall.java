@@ -14,23 +14,21 @@ public class Firewall implements Observable {
 
     private Random fate =  new Random();
 
-    // do zmiany bo wg wz. Obserwator Subject (Firewall) nie może wiedzieć nic więcej o Obserwatorze
-    // niż to że są obserwatorami (implementują interfejs)
-    private LoggerUtil loggerUtil = new LoggerUtil();
 
-    public void startFirewall() {
+    // Logger został usunięty, daje informacje obserwatorom zgodnie z poniższym
 
-        for (;;) {
+    public FirewallIncident startFirewall() {
+
             try {
                 Thread.sleep(TimeUnit.SECONDS.toMillis(2));
                 FirewallIncident firewallIncident = posibbleIncidents[fate.nextInt(200)% posibbleIncidents.length];
                 publishIncident(firewallIncident);
-                loggerUtil.log(firewallIncident.toString());
             }
             catch (InterruptedException e){
                 e.printStackTrace();
             }
-        }
+
+        return firewallIncident;
 
     }
 
