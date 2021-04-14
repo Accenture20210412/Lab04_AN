@@ -1,5 +1,7 @@
 package main.java.dp.component;
 
+import java.util.List;
+
 public class File implements FileSystemElement {
 
 	private String name;
@@ -14,16 +16,6 @@ public class File implements FileSystemElement {
 		return true;
 	}
 
-	@Override
-	public boolean remove() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void move() {
-
-	}
 
 	@Override
 	public void print() {

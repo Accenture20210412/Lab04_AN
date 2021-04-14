@@ -46,6 +46,12 @@ public class Main {
             b.add(f8);
         }
 
+        f5.setName("nowa nazwa f5");
+        a.removeElementIncluded("f1.txt");
+        d.move(f8, c, directories);
+
+
+
 
     }
 }
