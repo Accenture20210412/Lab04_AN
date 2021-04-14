@@ -13,11 +13,17 @@ public class PremiumCar extends CarAccessoriesDecorator {
 
     @Override
     public double getPrice() {
-        return car.getPrice() + 25000;
+        if(car != null) {
+            return car.getPrice() + 25000;
+        }
+        else return 25000;
     }
 
     @Override
     public String getFeatures() {
-        return car.getFeatures() + " + Premium Interior";
+        if(car!=null) {
+            return car.getFeatures() + " + Premium Interior";
+        }
+        else return "Premium Interior";
     }
 }

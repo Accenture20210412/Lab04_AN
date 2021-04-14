@@ -13,11 +13,17 @@ public class CarWithAirConditioning extends CarAccessoriesDecorator {
 
     @Override
     public double getPrice() {
-        return car.getPrice() + 1000;
+        if(car != null) {
+            return car.getPrice() + 1000;
+        }
+        else return 1000;
     }
 
     @Override
     public String getFeatures() {
-        return car.getFeatures() + " + Air Conditioning";
+        if(car!=null) {
+            return car.getFeatures() + " + Air Conditioning";
+        }
+        else return "Air Conditioning";
     }
 }

@@ -1,6 +1,6 @@
 package main.java.dp.decorator;
 
-public class StandardCar implements Car {
+public class StandardCar extends CarAccessoriesDecorator {
 
     private Car car;
 
@@ -13,12 +13,18 @@ public class StandardCar implements Car {
 
     @Override
     public double getPrice() {
-        return 50000;
+        if(car != null) {
+            return car.getPrice() + 50000;
+        }
+        else return 50000;
     }
 
     @Override
     public String getFeatures() {
-        return "Standard car";
+        if(car!=null) {
+            return car.getFeatures() + " + Standard";
+        }
+        else return "Standard";
     }
 
 

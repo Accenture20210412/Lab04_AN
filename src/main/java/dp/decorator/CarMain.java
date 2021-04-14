@@ -2,6 +2,16 @@ package main.java.dp.decorator;
 
 public class CarMain {
     public static void main(String[] args) {
+
+        Car airc = new CarWithAirConditioning();
+        System.out.println(airc.getPrice());
+        System.out.println(airc.getFeatures());
+
+        Car stan = new StandardCar(airc);
+        System.out.println(stan.getPrice());
+        System.out.println(stan.getFeatures() + "\n");
+
+
         Car standardCar = new StandardCar();
         System.out.println("Standard car price: " + standardCar.getPrice());
         System.out.println("Standard car features: " + standardCar.getFeatures());
