@@ -31,7 +31,13 @@ public class Directory implements FileSystemElement {
 	}
 
 	@Override
-	public void move(FileSystemElement element, Directory directory) {
+	public void move(FileSystemElement element, Directory directory, List<Directory> directories) {
+		if(this.fileSystemElements.contains(element) && directories.contains(directory)) {
+			fileSystemElements.remove(element);
+			directory.add(element);
+			System.out.println("Element removed");
+		}
+		System.out.println("Element doesn't exist in this folder");
 
 	}
 

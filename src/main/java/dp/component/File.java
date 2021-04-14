@@ -21,9 +21,8 @@ public class File implements FileSystemElement {
 	}
 
 	@Override
-	public boolean move() {
-		// TODO Auto-generated method stub
-		return false;
+	public void move() {
+
 	}
 
 	@Override
