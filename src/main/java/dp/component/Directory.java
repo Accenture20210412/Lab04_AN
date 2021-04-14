@@ -1,6 +1,7 @@
 package main.java.dp.component;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 public class Directory implements FileSystemElement {
@@ -19,25 +20,51 @@ public class Directory implements FileSystemElement {
 	}
 
 	@Override
-	public boolean remove() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean remove(FileSystemElement fileSystemElement) {
+		if (fileSystemElements.contains(fileSystemElement)) {
+			fileSystemElements.remove(fileSystemElement);
+			return true;
+		} else {
+			System.out.println("W wybranym folderze nie znajduje się podany obiekt");
+			return false;
+		}
 	}
 
 	@Override
-	public boolean move() {
-		// TODO Auto-generated method stub
-		return false;
+	public void move(FileSystemElement element, Directory directory) {
+
 	}
 
 	@Override
 	public void print() {
-		System.out.println(name);
+		fileSystemElements.forEach(System.out::println);
 	}
 
 	@Override
 	public void add(FileSystemElement fileSystemElement) {
 		fileSystemElements.add(fileSystemElement);
+	}
+
+	public void renameElementIncluded(String oldName, String newName) {
+		for(FileSystemElement element : fileSystemElements) {
+			if(element.getName() == oldName) element.setName(newName);
+		}
+	}
+
+	public void removeElementIncluded(String fileName) {
+		fileSystemElements.removeIf(element -> element.getName() == fileName);
+	}
+
+
+
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
 	}
 
 

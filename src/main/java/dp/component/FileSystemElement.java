@@ -7,6 +7,7 @@ public interface FileSystemElement {
 	public boolean move();
 	public void print();
 	public void add(FileSystemElement fileSystemElement);
-	public void renameElementIncluded(FileSystemElement fileSystemElement);
+	public String getName();
+	public void setName(String name);
 
 }
