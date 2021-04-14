@@ -25,7 +25,7 @@ public class Firewall implements Observable {
                 Thread.sleep(TimeUnit.SECONDS.toMillis(2));
                 FirewallIncident firewallIncident = posibbleIncidents[fate.nextInt(200)% posibbleIncidents.length];
                 publishIncident(firewallIncident);
-                loggerUtil.log(justNow.toString());
+                loggerUtil.log(firewallIncident.toString());
             }
             catch (InterruptedException e){
                 e.printStackTrace();
@@ -52,5 +52,13 @@ public class Firewall implements Observable {
     public void publishIncident(FirewallIncident incident) {
         firewallIncident = incident;
         notifyObservers();
+    }
+
+    public FirewallIncident getFirewallIncident() {
+        return firewallIncident;
+    }
+
+    public void setFirewallIncident(FirewallIncident firewallIncident) {
+        this.firewallIncident = firewallIncident;
     }
 }
