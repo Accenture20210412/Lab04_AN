@@ -8,7 +8,6 @@ public class LoggerUtil implements Observer {
 
     public LoggerUtil(Firewall firewall) {
         this.firewall = firewall;
-        this.newestIncident = firewall.getFirewallIncident();
     }
 
     @Override

@@ -17,7 +17,7 @@ public class Firewall implements Observable {
 
     // Logger został usunięty, daje informacje obserwatorom zgodnie z poniższym
 
-    public FirewallIncident startFirewall() {
+    public void startFirewall() {
 
             try {
                 Thread.sleep(TimeUnit.SECONDS.toMillis(2));
@@ -27,9 +27,6 @@ public class Firewall implements Observable {
             catch (InterruptedException e){
                 e.printStackTrace();
             }
-
-        return firewallIncident;
-
     }
 
     @Override

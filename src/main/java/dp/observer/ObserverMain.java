@@ -10,9 +10,7 @@ public class ObserverMain {
         firewall.attach(loggerUtil);
         firewall.attach(riskManager);
 
-        FirewallIncident firewallIncident = firewall.startFirewall();
-
-        firewall.publishIncident(firewallIncident);
+        firewall.startFirewall();
 
     }
 }

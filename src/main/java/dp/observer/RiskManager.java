@@ -7,7 +7,6 @@ public class RiskManager implements Observer {
 
     public RiskManager(Firewall firewall) {
         this.firewall = firewall;
-        newestIncident = firewall.getFirewallIncident();
     }
 
     @Override
@@ -16,12 +15,18 @@ public class RiskManager implements Observer {
         switch(newestIncident) {
             case LOW_SEVERITY:
                 System.out.println("Niskie zagrożenie, nie robię nic");
+                break;
             case MEDIUM_SEVERITY:
                 System.out.println("Srednie zagrożenie, powiadamiam administratora");
+                break;
             case HIGH_SEVERITY:
                 System.out.println("Wysokie zagrożenie, blokuję większość funkcji");
+                break;
             case EXTREME_SEVERITY:
                 System.out.println("Ekstremalne zagrożenie, wyłączam program");
+                break;
+            default:
+                System.out.println("Coś dziwnego się dzieje, ale nie znam zagrożenia");
         }
     }
 }
